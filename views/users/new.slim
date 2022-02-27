@@ -1,0 +1,19 @@
+div#register-form-container.centered-container
+  h2 Registrera dig
+
+  form#register-form method="POST" action="/users"
+    div.input-block
+      label for="username" Användarnamn
+      input type="text" name="username"
+
+    div.input-block
+      label for="password" Lösenord
+      input type="password" name="password"
+
+    div.input-block
+      label for="password_confirm" Bekräfta lösenord
+      input type="password" name="password_confirm"
+
+    div.input-block
+      input type="submit" value="Registrera"
+    // The user may change their profile picture later on their page

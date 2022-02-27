@@ -1,0 +1,133 @@
+body {
+    display: grid;
+    grid-template-areas: "he"
+                         "re"
+    ;
+    grid-template-rows: 5rem auto 5rem;
+
+    margin: 0;
+}
+
+body header#top-header {
+    grid-area: he;
+
+    justify-content: space-between;
+    background-color: lightsteelblue;
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+header#top-header h1 {
+    text-align: center;
+}
+
+header#top-header div#hamburger-button-area {
+    padding: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* The actual button part */
+header#top-header div#hamburger-button-area img#hamburger-button {
+    cursor: pointer;
+}
+
+body div#rest {
+    grid-area: re;
+}
+
+nav#hamburger-menu {
+    height: 100vh;
+    width: 20vw;
+    position: fixed;
+    z-index: 10;
+    right: -35%;
+    transition-property: right;
+    transition-duration: 0.3s;
+
+    background-color: white;
+    border: 2px solid black;
+}
+
+nav#hamburger-menu * {
+    display: block;
+    padding: 1rem 0 0 30%;
+}
+
+nav#hamburger-menu.show {
+    right: 0;
+}
+
+div#hamburger-menu-hover-detect {
+    position: fixed;
+    height: 100vh;
+    width: 1vw;
+    right: 0;
+}
+
+.hoverdetector {
+    opacity: 0;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form#logout-form {
+    margin: 0;
+    padding: 0;
+}
+
+.button-as-link {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-family: serif;
+    font-size: 16;
+}
+
+.button-as-link:hover {
+    text-decoration: underline;
+}
+
+a.plain-link {
+    text-decoration: none;
+    color: black;
+}
+
+hr.horizontal-seperator {
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 0;
+}
+
+form .input-block {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem;
+}
+
+form .input-block input {
+    width: 20rem;
+    height: 2rem;
+}
+
+div#startpage-container section#latest-updates {
+    width: 80%;
+}
+
+div#startpage-container section#latest-updates article.update-item {
+    border: 3px solid black;
+    border-radius: 2px;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link rel="stylesheet" href="/css/style.css"
+    title Äventyr med ägg
+  body
+    header#top-header
+      h1 
+        a.plain-link href="/" Äventyr med ägg
+      div#hamburger-button-area
+        img#hamburger-button src="/img/hamburger-menu-icon.svg" alt="hamburgare"
+
+    nav#hamburger-menu
+      - if session[:user_id]
+        strong = username_from_session_id
+        a Profil
+        // TODO: Fråga Emil hur detta görs restfull
+        form#logout-form action="/users/logout" method="POST"
+          input.button-as-link type="submit" value="Logga ut"
+      - else
+        // Lägg in faktiska länkar här
+        a href="/users/new" Registrera dig
+        a href="/users/showlogin" Logga in
+      hr.horizontal-seperator
+      a Om oss
+      a Policy
+    div#hamburger-menu-hover-detect.hoverdetector
+
+    div#rest
+      == yield
+
+    script src="/js/hamburger-menu.js"
