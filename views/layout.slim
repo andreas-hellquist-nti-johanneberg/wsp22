@@ -12,16 +12,16 @@ html lang="en"
         img#hamburger-button src="/img/hamburger-menu-icon.svg" alt="hamburgare"
 
     nav#hamburger-menu
-      - if session[:user_id]
+      - if user_is_logged_in
         strong = username_from_session_id
-        a Profil
+        a href="/users/profile/#{username_from_session_id}" Profil
         // TODO: Fråga Emil hur detta görs restfull
         form#logout-form action="/users/logout" method="POST"
           input.button-as-link type="submit" value="Logga ut"
       - else
         // Lägg in faktiska länkar här
         a href="/users/new" Registrera dig
-        a href="/users/showlogin" Logga in
+        a href="/users/login" Logga in
       hr.horizontal-seperator
       a Om oss
       a Policy

@@ -97,6 +97,21 @@ form#logout-form {
     text-decoration: underline;
 }
 
+.info-bubble {
+    padding: 1rem;
+    background-color: lightcyan;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.horizontal-container {
+    display: flex;
+}
+
+.horizontal-container * {
+    margin: 1rem;
+}
+
 a.plain-link {
     text-decoration: none;
     color: black;
@@ -130,4 +145,17 @@ div#startpage-container section#latest-updates article.update-item {
     padding: 1rem;
     margin: 1rem;
     text-align: center;
+}
+
+section#profile-img-name-card {
+    height: 3rem;
+}
+
+section#profile-img-name-card img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+section#profile-img-name-card a::before {
+    content: " ";
 }

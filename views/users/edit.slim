@@ -1,0 +1,33 @@
+div#profile-edit-container.centered-container
+  h2 Redigera din profil
+
+  p Varsågod och redigera din profil. För tomma fält används nuvarande data.
+
+  form#user-edit-form method="POST" action="/users/#{user_data["username"]}/update" enctype="multipart/form-data"
+    div.input-block
+      label for="username" Användarnamn
+      input type="text" name="new_username" placeholder="#{user_data["username"]}"
+
+    hr.horizontal-seperator
+
+    div.input-block
+      label for="curr_password" Nuvarande lösenord
+      input type="password" name="curr_password"
+
+    div.input-block
+      label for="new_password" Nytt lösenord
+      input type="password" name="new_password"
+
+    div.input-block
+      label for="confirm_new_password" Bekräfta nytt lösenord
+      input type="password" name="confirm_new_password"
+
+    hr.horizontal-seperator
+
+    div.input-block
+      img src="#{user_data["profile_picture"]}" alt="Profilbild"
+      label for="new_profile_picture" Ny profilbild
+      input type="file" name="new_profile_picture"
+
+    div.input-block
+      input type="submit" value="Uppdatera"

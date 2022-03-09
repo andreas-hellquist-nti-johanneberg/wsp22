@@ -1,0 +1,35 @@
+// Profile should show:
+// - username
+// - wether user is administrator
+// - profile picture
+// - all ratings of videos
+// - all comments on videos
+// - all comments on blog posts
+
+// That will be easier to implement when I have actual data though, so for now
+// I will only show the first three
+
+
+div#profile-container.centered-container
+  h2 Profil
+
+  - if user_data["is_admin"] == 1
+    div.info-bubble Användaren är en administratör
+
+  // I will have to make this page pretty with a grid sometime. This is
+  // sufficient for now though
+  section#profile-img-name-card
+    img src="#{user_data["profile_picture"]}" alt="Profilbild"
+    span = user_data["username"]
+    - if user_data["id"] == session[:user_id]
+      a href="/users/#{user_data["username"]}/edit" Redigera din profil
+
+  section.horizontal-container
+    section
+      h3 Kommentarer
+      - 5.times do |num|
+        p Kommentar
+    section
+      h3 Stjärnmarkeringar
+      - 5.times do |num|
+        p Stjärnor
