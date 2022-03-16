@@ -23,6 +23,10 @@ html lang="en"
         a href="/users/new" Registrera dig
         a href="/users/login" Logga in
       hr.horizontal-seperator
+      - if user_is_admin
+        a Ladda upp video
+        a Ladda upp blogginlägg
+        hr.horizontal-seperator
       a Om oss
       a Policy
     div#hamburger-menu-hover-detect.hoverdetector

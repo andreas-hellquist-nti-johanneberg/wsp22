@@ -150,6 +150,9 @@ post '/users/:username/update' do
 
     db = get_db()
 
+    # TODO: Temporary until I use id in url
+    user_id = db.execute("SELECT id FROM users WHERE username = ?", params["username"]).first["id"]
+
     # TODO: Check for duplicates / handle sql exceptions
     new_username = params["new_username"]
     unless new_username.empty?
@@ -162,19 +165,31 @@ post '/users/:username/update' do
     curr_password = params["curr_password"]
     new_password = params["new_password"]
     new_password_confirm = params["confirm_new_password"]
-    unless curr_password.empty?() || new_password.empty?() || new_password_confirm.empty?()
-        result = db.execute("SELECT password_hash FROM users WHERE id = ?", session[:user_id]).first
+    # Admin can just change a users password without needing to know the current
+    # password
+    if user_is_admin
+        unless new_password.empty?() || new_password_confirm.empty?()
+            unless new_password == new_password_confirm
+                halt "Nya lösenord matchade inte"
+            end
 
-        pw_hash = result["password_hash"]
-        unless BCrypt::Password.new(pw_hash) == curr_password
-            halt "Felaktigt nuvarande lösenord"
+            update_password = true
         end
+    else
+        unless curr_password.empty?() || new_password.empty?() || new_password_confirm.empty?()
+            result = db.execute("SELECT password_hash FROM users WHERE id = ?", user_id).first
 
-        unless new_password == new_password_confirm
-            halt "Nya lösenord matchade inte"
+            pw_hash = result["password_hash"]
+            unless BCrypt::Password.new(pw_hash) == curr_password
+                halt "Felaktigt nuvarande lösenord"
+            end
+
+            unless new_password == new_password_confirm
+                halt "Nya lösenord matchade inte"
+            end
+
+            update_password = true
         end
-
-        update_password = true
     end
 
     pfp_data = params["new_profile_picture"]
@@ -195,7 +210,7 @@ post '/users/:username/update' do
     if update_username
         db.execute("UPDATE users
                     SET username = ?
-                    WHERE id = ?", new_username, session[:user_id])
+                    WHERE id = ?", new_username, user_id)
 
         # Placeholder until I change to ids in url
         username = new_username
@@ -205,7 +220,7 @@ post '/users/:username/update' do
         new_pw_hash = BCrypt::Password.create(new_password)
         db.execute("UPDATE users
                     SET password_hash = ?
-                    WHERE id = ?", new_pw_hash, session[:user_id])
+                    WHERE id = ?", new_pw_hash, user_id)
     end
 
     if update_pfp
@@ -220,7 +235,7 @@ post '/users/:username/update' do
         #Lägg till path i databas
         db.execute("UPDATE users
                     SET profile_picture = ?
-                    WHERE id = ?", path_for_db, session[:user_id])
+                    WHERE id = ?", path_for_db, user_id)
         
         #Spara bilden (skriv innehållet i tempfile till destinationen path)
         File.write(path, File.read(tmpfile_path))

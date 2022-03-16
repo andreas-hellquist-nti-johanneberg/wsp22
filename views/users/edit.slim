@@ -10,9 +10,10 @@ div#profile-edit-container.centered-container
 
     hr.horizontal-seperator
 
-    div.input-block
-      label for="curr_password" Nuvarande lösenord
-      input type="password" name="curr_password"
+    - if !(user_is_admin)
+      div.input-block
+        label for="curr_password" Nuvarande lösenord
+        input type="password" name="curr_password"
 
     div.input-block
       label for="new_password" Nytt lösenord
