@@ -4,7 +4,6 @@ require 'sqlite3'
 require 'bcrypt'
 require 'digest'
 
-# TODO: I REALLY need to encrypt the cookies
 enable :sessions
 
 def get_db()
@@ -242,4 +241,17 @@ post '/users/:username/update' do
     end
  
     redirect "/users/profile/#{username}"
+end
+
+before '/admin' do
+    unless user_is_admin
+        halt 403, "Don't"
+    end
+end
+
+get('/admin') do
+    db = get_db()
+    result = db.execute("SELECT username FROM users")
+    p result
+    slim(:admin, locals:{usernames:result})
 end

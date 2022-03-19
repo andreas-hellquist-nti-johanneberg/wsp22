@@ -1,0 +1,24 @@
+div.centered-container
+  div#admin-panel-container
+    header#admin-page-header
+      h2 För alla dina administrativa behov
+
+    section#admin-add-content
+      h3 Lägg till innehåll
+      a.normal-border Lägg upp video
+      a.normal-border Lägg upp blogginlägg
+
+    section#admin-edit-users
+      h3 Redigera användare
+      form
+        div.input-block
+          label Användare att redigera
+          select#username-select
+            option value="Välj en användare" Välj en Användare
+            - usernames.each do |user|
+              option value=user["username"] #{user["username"]}
+
+        // Edited with javascript
+        a#user-edit-link href="#" Redigera
+
+script src="/js/admin-panel-user-chooser.js"
