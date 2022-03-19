@@ -1,7 +1,11 @@
 div#profile-edit-container.centered-container
-  h2 Redigera din profil
+  / For a nicer experience for admins
+  - if username_from_session_id == user_data["username"]
+    h2 Redigera din profil
+  - else
+    h2 Redigera #{(user_data["username"][-1] == 's') ? (user_data["username"]) : (user_data["username"] + 's')} profil
 
-  p Varsågod och redigera din profil. För tomma fält används nuvarande data.
+  p För tomma fält används nuvarande data.
 
   form#user-edit-form method="POST" action="/users/#{user_data["username"]}/update" enctype="multipart/form-data"
     div.input-block
