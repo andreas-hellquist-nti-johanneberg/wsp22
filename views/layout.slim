@@ -14,7 +14,7 @@ html lang="en"
     nav#hamburger-menu
       - if user_is_logged_in
         strong = username_from_session_id
-        a href="/users/profile/#{username_from_session_id}" Profil
+        a href="/users/profile/#{session[:user_id]}" Profil
         // TODO: Fråga Emil hur detta görs restfull
         form#logout-form action="/users/logout" method="POST"
           input.button-as-link type="submit" value="Logga ut"

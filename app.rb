@@ -99,13 +99,11 @@ post '/users/login' do
     end
 end
 
-# TODO: Replace username in all these routes with an id so links don't break
-# when usernames change
-get '/users/profile/:username' do
+get '/users/profile/:id' do
     db = get_db()
     result = db.execute("SELECT id, username, is_admin, profile_picture
                          FROM users
-                         WHERE username = ?", params['username']).first
+                         WHERE id = ?", params['id']).first
     unless result
         return "User does not exist"
     end
@@ -113,19 +111,19 @@ get '/users/profile/:username' do
     slim(:'users/profile', locals:{user_data:result})
 end
 
-get '/users/:username/edit' do
+get '/users/:id/edit' do
     if (not user_is_logged_in)
         halt "Logga in först"
     end
 
-    unless username_from_session_id() == params["username"] || (user_is_admin)
+    unless session[:user_id] == params["id"] || (user_is_admin)
         halt 403, "Forbidden osv"
     end
 
     db = get_db()
     result = db.execute("SELECT id, username, profile_picture
                          FROM users
-                         WHERE username = ?", params['username']).first
+                         WHERE id = ?", params['id']).first
 
     unless result
         return "User does not exist"
@@ -134,12 +132,12 @@ get '/users/:username/edit' do
     slim(:'users/edit', locals:{user_data:result})
 end
 
-post '/users/:username/update' do
+post '/users/:id/update' do
     if (not user_is_logged_in)
         halt "Logga in först"
     end
 
-    unless username_from_session_id() == params["username"] || (user_is_admin)
+    unless session[:user_id] == params["id"] || (user_is_admin)
         halt 403, "Forbidden osv"
     end
 
@@ -149,16 +147,12 @@ post '/users/:username/update' do
 
     db = get_db()
 
-    # TODO: Temporary until I use id in url
-    user_id = db.execute("SELECT id FROM users WHERE username = ?", params["username"]).first["id"]
+    user_id = params["id"]
 
     # TODO: Check for duplicates / handle sql exceptions
     new_username = params["new_username"]
     unless new_username.empty?
         update_username = true
-    else
-        # Workaround until url:s use ids
-        username = params["username"]
     end
 
     curr_password = params["curr_password"]
@@ -210,9 +204,6 @@ post '/users/:username/update' do
         db.execute("UPDATE users
                     SET username = ?
                     WHERE id = ?", new_username, user_id)
-
-        # Placeholder until I change to ids in url
-        username = new_username
     end
 
     if update_password
@@ -240,7 +231,7 @@ post '/users/:username/update' do
         File.write(path, File.read(tmpfile_path))
     end
  
-    redirect "/users/profile/#{username}"
+    redirect "/users/profile/#{user_id}"
 end
 
 before '/admin' do
@@ -251,7 +242,6 @@ end
 
 get('/admin') do
     db = get_db()
-    result = db.execute("SELECT username FROM users")
-    p result
+    result = db.execute("SELECT id, username FROM users")
     slim(:admin, locals:{usernames:result})
 end

@@ -7,7 +7,7 @@ div#profile-edit-container.centered-container
 
   p För tomma fält används nuvarande data.
 
-  form#user-edit-form method="POST" action="/users/#{user_data["username"]}/update" enctype="multipart/form-data"
+  form#user-edit-form method="POST" action="/users/#{user_data["id"]}/update" enctype="multipart/form-data"
     div.input-block
       label Användarnamn
       input type="text" name="new_username" placeholder="#{user_data["username"]}"
