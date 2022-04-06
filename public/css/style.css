@@ -214,3 +214,7 @@ div#admin-panel-container section#admin-edit-users {
 div#admin-panel-container section#admin-edit-users a {
     margin-left: 1rem;
 }
+
+form#video-upload-form div.input-block * {
+    width: 40rem;
+}

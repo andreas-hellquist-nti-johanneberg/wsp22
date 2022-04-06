@@ -22,7 +22,7 @@ div#profile-container.centered-container
     img src="#{user_data["profile_picture"]}" alt="Profilbild"
     span = user_data["username"]
     - if user_data["id"] == session[:user_id]
-      a href="/users/#{user_data["username"]}/edit" Redigera din profil
+      a href="/users/#{user_data["id"]}/edit" Redigera din profil
 
   section.horizontal-container
     section

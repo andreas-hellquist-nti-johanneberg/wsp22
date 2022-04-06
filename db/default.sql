@@ -11,6 +11,7 @@ CREATE TABLE users (
 CREATE TABLE videos (
     id INTEGER PRIMARY KEY,
     title TEXT NOT NULL,
+    description TEXT NOT NULL,
     video_src TEXT NOT NULL,
     -- Stored as a unix timestamp
     upload_date INTEGER NOT NULL

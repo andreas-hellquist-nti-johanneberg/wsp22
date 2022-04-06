@@ -1,0 +1,24 @@
+div.centered-container
+  h2 Lägg upp video
+
+  form#video-upload-form method="POST" action="/videos" enctype="multipart/form-data"
+    div.input-block
+      label Titel
+      input type="text" name="video_title" required="required"
+
+    div.input-block
+      label Beskrivning
+      textarea name="description"
+
+    div.input-block
+      label Genre
+      - genres.each do |genre|
+        input type="checkbox" name="genre_#{genre["id"]}" id="genre_#{genre["id"]}"
+        label for="genre_#{genre["id"]}" #{genre["genre"]}
+
+    div.input-block
+      label Video
+      input type="file" name="video_src" required="required"
+
+    div.input-block
+      input type="submit" value="Ladda upp"

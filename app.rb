@@ -12,6 +12,15 @@ def get_db()
     return db
 end
 
+# def filetype_from_file_param(file)
+#     p "DATA: #{pfp_data}"
+#     content_type_header = pfp_data["head"].chomp.lines[-1]
+#     p "CONTENT TYPE: #{content_type}"
+#     filetype = content_type_header.split(' ')[-1]
+# 
+#     return filetype
+# end
+
 helpers do
     def user_is_logged_in
         return session.key?(:user_id)
@@ -116,7 +125,7 @@ get '/users/:id/edit' do
         halt "Logga in först"
     end
 
-    unless session[:user_id] == params["id"] || (user_is_admin)
+    unless session[:user_id] == params["id"].to_i || (user_is_admin)
         halt 403, "Forbidden osv"
     end
 
@@ -137,7 +146,7 @@ post '/users/:id/update' do
         halt "Logga in först"
     end
 
-    unless session[:user_id] == params["id"] || (user_is_admin)
+    unless session[:user_id] == params["id"].to_i || (user_is_admin)
         halt 403, "Forbidden osv"
     end
 
@@ -147,7 +156,7 @@ post '/users/:id/update' do
 
     db = get_db()
 
-    user_id = params["id"]
+    user_id = params["id"].to_i
 
     # TODO: Check for duplicates / handle sql exceptions
     new_username = params["new_username"]
@@ -187,9 +196,7 @@ post '/users/:id/update' do
 
     pfp_data = params["new_profile_picture"]
     if pfp_data
-        content_type_header = pfp_data["head"].chomp.lines[-1]
-        p "CONTENT TYPE: #{content_type}"
-        filetype = content_type_header.split(' ')[-1]
+        filetype = pfp_data["type"]
 
         unless filetype == "image/png" || filetype == "image/jpeg"
             halt "Only png and jpeg images are supported"
@@ -244,4 +251,77 @@ get('/admin') do
     db = get_db()
     result = db.execute("SELECT id, username FROM users")
     slim(:admin, locals:{usernames:result})
+end
+
+before '/videos/new' do
+    unless user_is_admin
+        halt 403, "Don't"
+    end
+end
+
+get('/videos/new') do
+    db = get_db()
+    res = db.execute("SELECT * FROM genres")
+    slim(:'videos/new', locals:{genres:res})
+end
+
+# {"filename"=>"2022-03-17_20-24-57.mp4", "type"=>"video/mp4", "name"=>"video_src", "tempfile"=>#<Tempfile:/tmp/RackMultipart20220330-2616-1o62fw8.mp4>, "head"=>"Content-Disposition: form-data; name=\"video_src\"; filename=\"2022-03-17_20-24-57.mp4\"\r\nContent-Type: video/mp4\r\n"}
+post('/videos') do
+    unless (user_is_admin)
+        halt 403, "You are not admin"
+    end
+
+    db = get_db()
+
+    video_title = params["video_title"]
+    video_desc = params["description"]
+    video_src = params["video_src"]
+
+    if video_desc.empty?()
+        video_desc = "Videon saknar beskrivning"
+    end
+
+    unless video_title.empty?() || video_src.empty?()
+        filetype = video_src["type"]
+
+        unless filetype == "video/mp4"
+            halt "Endast mp4 formatet stöds för videor"
+        end
+
+        video_ext = filetype.split('/')[-1]
+        tmpfile_path = video_src["tempfile"]
+
+        video_hash = Digest::SHA256.file(tmpfile_path).hexdigest
+ 
+        path = "./public/videos/#{video_hash}.#{video_ext}"
+        path_for_db = "/videos/#{video_hash}.#{video_ext}"
+        
+        #Lägg till path i databas
+        db.execute("INSERT INTO videos
+                     (title, description, video_src, upload_date)
+                     VALUES (?, ?, ?, (CAST((strftime('%s')) AS INT)))", video_title, video_desc,
+                                                        path_for_db)
+        video_id = db.execute("SELECT last_insert_rowid()").first["last_insert_rowid()"]
+        
+        #Spara bilden (skriv innehållet i tempfile till destinationen path)
+        File.write(path, File.read(tmpfile_path))
+
+        # Add genres to the relation table
+        genre_ids = db.execute("SELECT id FROM genres").map {|genre| genre["id"]}
+        for genre_id in genre_ids do
+            if params["genre_#{genre_id}"] == 'on'
+                db.execute("INSERT INTO video_genre_relation (video_id, genre_id)
+                            VALUES (last_insert_rowid(), ?)", genre_id)
+            end
+        end
+    else
+        halt "You must supply a title and a video"
+    end
+
+    redirect "/videos/#{video_id}"
+end
+
+get('/videos/:id') do
+    # Video showwy stuff
+    db = get_db()
 end
