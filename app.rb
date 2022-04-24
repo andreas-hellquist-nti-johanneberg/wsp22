@@ -12,6 +12,24 @@ def get_db()
     return db
 end
 
+def get_avarage_star_rating(video_id)
+    db = get_db()
+    res = db.execute("SELECT stars FROM video_reviews WHERE video_id = ?", video_id)
+    if res.empty?()
+        return 0
+    else
+        total_stars = 0
+        for i in res do
+            total_stars += i["stars"]
+        end
+        avg_stars = total_stars.to_f / res.length
+
+        print("JKJKFJKFJKFJKFJKFJKJ")
+
+        return avg_stars
+    end
+end
+
 # def filetype_from_file_param(file)
 #     p "DATA: #{pfp_data}"
 #     content_type_header = pfp_data["head"].chomp.lines[-1]
@@ -54,8 +72,6 @@ get '/users/new' do
 end
 
 # Add user
-# TODO: Two users can't have the same username. Do something about sql exceptions
-#       when that occurs
 post '/users' do
     username = params["username"]
     password = params["password"]
@@ -65,7 +81,11 @@ post '/users' do
         # Lägg till användare
         password_hash = BCrypt::Password.create(password)
         db = get_db()
-        db.execute("INSERT INTO users (username, password_hash, is_admin, profile_picture) VALUES (?, ?, FALSE, '/user_public_data/profile-picture-default.png')", username, password_hash)
+        begin
+            db.execute("INSERT INTO users (username, password_hash, is_admin, profile_picture) VALUES (?, ?, FALSE, '/user_public_data/profile-picture-default.png')", username, password_hash)
+        rescue SQLite3::ConstraintException
+            halt "Användarnamnet är upptaget"
+        end
 
         session[:user_id] = db.execute("SELECT id FROM users WHERE username = ?", username).first["id"]
         redirect '/'
@@ -113,11 +133,20 @@ get '/users/profile/:id' do
     result = db.execute("SELECT id, username, is_admin, profile_picture
                          FROM users
                          WHERE id = ?", params['id']).first
+
+    reviews = db.execute("SELECT users.username, users.profile_picture,
+                                video_reviews.stars, video_reviews.text, video_reviews.video_id,
+                                videos.title AS video_title
+                         FROM ((users
+                             INNER JOIN video_reviews ON users.id = video_reviews.user_id)
+                             INNER JOIN videos ON videos.id = video_reviews.video_id)
+                         WHERE users.id = ?", params['id'])
+
     unless result
         return "User does not exist"
     end
 
-    slim(:'users/profile', locals:{user_data:result})
+    slim(:'users/profile', locals:{user_data:result, reviews:reviews})
 end
 
 get '/users/:id/edit' do
@@ -241,6 +270,20 @@ post '/users/:id/update' do
     redirect "/users/profile/#{user_id}"
 end
 
+post('/users/:id/delete') do
+    unless (user_is_admin)
+        halt 403, "No"
+    end
+
+    user_id = params["id"]
+
+    db = get_db()
+    db.execute("DELETE FROM users WHERE id = ?", user_id)
+    db.execute("DELETE FROM video_reviews WHERE user_id = ?", user_id)
+
+    redirect '/'
+end
+
 before '/admin' do
     unless user_is_admin
         halt 403, "Don't"
@@ -251,6 +294,35 @@ get('/admin') do
     db = get_db()
     result = db.execute("SELECT id, username FROM users")
     slim(:admin, locals:{usernames:result})
+end
+
+get '/videos' do
+    db = get_db()
+    # Possible are "new", "old", "stars"
+    order = params["video_order"]
+    if order.nil?()
+        order = "new"
+    end
+
+    # Add the avarage star rating to each video
+    res = db.execute("SELECT id, title, upload_date FROM videos")
+    res.each do |hash|
+        hash.store("stars", get_avarage_star_rating(hash["id"]))
+    end
+    puts res
+
+    puts "NOW IM HEREEERER"
+    case order
+    when "new"
+        res.sort! {|hash| hash["upload_date"]}
+    when "old"
+        res.sort! {|hash| hash["upload_date"]}
+        res.reverse!()
+    when "stars"
+        res.sort! {|hash| hash["stars"]}
+    end
+
+    slim(:'videos/index', locals:{videos:res})
 end
 
 before '/videos/new' do
@@ -311,7 +383,7 @@ post('/videos') do
         for genre_id in genre_ids do
             if params["genre_#{genre_id}"] == 'on'
                 db.execute("INSERT INTO video_genre_relation (video_id, genre_id)
-                            VALUES (last_insert_rowid(), ?)", genre_id)
+                            VALUES (?, ?)", video_id, genre_id)
             end
         end
     else
@@ -324,4 +396,84 @@ end
 get('/videos/:id') do
     # Video showwy stuff
     db = get_db()
+    # Also get the reviews here
+    # Each index in the array has a different genre
+    res = db.execute("SELECT videos.id, videos.title, videos.description, videos.upload_date, videos.video_src, genres.genre
+        FROM ((video_genre_relation
+	    INNER JOIN videos ON videos.id = video_genre_relation.video_id)
+	    INNER JOIN genres ON genres.id = video_genre_relation.genre_id)
+        WHERE video_id = ?", params["id"])
+
+    p res
+
+    reviews = db.execute("SELECT users.id AS uid, users.username, users.profile_picture,
+                                 video_reviews.id AS rid, video_reviews.stars, video_reviews.text
+                          FROM (video_reviews
+                              INNER JOIN users ON users.id = video_reviews.user_id)
+                          WHERE video_reviews.video_id = ?", params["id"])
+    p reviews
+
+    slim(:'videos/show', locals:{video_data:res, video_reviews:reviews})
+end
+
+post('/video-reviews') do
+    if user_is_logged_in()
+        db = get_db()
+
+        user_id = session[:user_id]
+        video_id = params["video-id"].to_i
+        stars = params["num-stars"].to_i
+        review_text = params["review-text"]
+
+        test = db.execute("SELECT * FROM videos WHERE id = ?", video_id).first
+        if test == nil
+            halt "Ogiltigt video-id. Säg till en administratör (mig) om du inte orsakade detta med flit."
+        end
+        if stars < 1 || stars > 5
+            halt "För många eller för få stjärnor. Sluta inspektera element."
+        end
+        if review_text.empty?()
+            halt "Du måste skriva någonting i din recension."
+        end
+
+        db.execute("INSERT INTO video_reviews (user_id, video_id, stars, text)
+                    VALUES (?, ?, ?, ?)", user_id, video_id, stars, review_text)
+
+        redirect "/videos/#{video_id}"
+    else
+        halt "Hur hamnade du här?"
+    end
+end
+
+post('/video-reviews/:id/update') do
+    if user_is_logged_in()
+        db = get_db()
+
+        res = db.execute("SELECT user_id FROM video_reviews WHERE id = ?", params["id"]).first
+        unless session[:user_id] == res["user_id"] || (user_is_admin)
+            halt 403, "Nej du får inte redigera någon annans recension"
+        end
+
+        stars = params["num-stars"].to_i
+        review_text = params["review-text"]
+
+        test = db.execute("SELECT * FROM video_reviews WHERE id = ?", params["id"]).first
+        if test == nil
+            halt "Ogiltigt recension-id"
+        end
+        if stars < 1 || stars > 5
+            halt "För många eller för få stjärnor. Sluta inspektera element."
+        end
+        if review_text.empty?()
+            halt "Du måste skriva någonting i din recension."
+        end
+
+        db.execute("UPDATE video_reviews
+                    SET stars = ?, text = ?
+                    WHERE id = ?", stars, review_text, params["id"])
+
+        redirect "/videos/#{test["video_id"]}"
+    else
+        halt "Hur hamnade du här?"
+    end
 end

@@ -1,13 +1,16 @@
 const selectElement = document.getElementById ("username-select");
 
 selectElement.addEventListener ("change", (event) => {
-    const targetLink = document.getElementById ("user-edit-link");
+    const targetLinkView = document.getElementById ("user-view-link");
+    const targetLinkEdit = document.getElementById ("user-edit-link");
     let value = event.target.value;
 
     if (value == "Välj en användare") {
-        targetLink.href = "#";
+        targetLinkView.href = "#";
+        targetLinkEdit.href = "#";
     }
     else {
-        targetLink.href = `/users/${value}/edit`
+        targetLinkView.href = `/users/profile/${value}`
+        targetLinkEdit.href = `/users/${value}/edit`
     }
 });

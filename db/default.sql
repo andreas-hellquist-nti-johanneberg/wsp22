@@ -17,43 +17,51 @@ CREATE TABLE videos (
     upload_date INTEGER NOT NULL
 );
 
-CREATE TABLE user_video_rating_relation (
+CREATE TABLE video_reviews (
+    id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
     video_id INTEGER NOT NULL,
-    stars INTEGER NOT NULL
+    stars INTEGER NOT NULL,
+    text INTEGER NOT NULL
 );
 
-CREATE TABLE video_comments (
-    id INTEGER PRIMARY KEY,
-    video_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    content TEXT NOT NULL,
-    upload_date INTEGER NOT NULL
-);
+-- CREATE TABLE user_video_rating_relation (
+--     user_id INTEGER NOT NULL,
+--     video_id INTEGER NOT NULL,
+--     stars INTEGER NOT NULL
+-- );
 
-CREATE TABLE blog_comments (
-    id INTEGER PRIMARY KEY,
-    blog_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    content TEXT NOT NULL,
-    upload_date INTEGER NOT NULL
-);
+-- CREATE TABLE video_comments (
+--     id INTEGER PRIMARY KEY,
+--     video_id INTEGER NOT NULL,
+--     user_id INTEGER NOT NULL,
+--     content TEXT NOT NULL,
+--     upload_date INTEGER NOT NULL
+-- );
 
-CREATE TABLE blogposts (
-    id INTEGER PRIMARY KEY,
-    content TEXT NOT NULL,
-    upload_date INTEGER NOT NULL
-);
+-- CREATE TABLE blog_comments (
+--     id INTEGER PRIMARY KEY,
+--     blog_id INTEGER NOT NULL,
+--     user_id INTEGER NOT NULL,
+--     content TEXT NOT NULL,
+--     upload_date INTEGER NOT NULL
+-- );
+-- 
+-- CREATE TABLE blogposts (
+--     id INTEGER PRIMARY KEY,
+--     content TEXT NOT NULL,
+--     upload_date INTEGER NOT NULL
+-- );
 
 CREATE TABLE genres (
     id INTEGER PRIMARY KEY,
     genre TEXT NOT NULL UNIQUE
 );
 
-CREATE TABLE blogpost_genre_relation (
-    blogpost_id INTEGER NOT NULL,
-    genre_id INTEGER NOT NULL
-);
+-- CREATE TABLE blogpost_genre_relation (
+--     blogpost_id INTEGER NOT NULL,
+--     genre_id INTEGER NOT NULL
+-- );
 
 CREATE TABLE video_genre_relation (
     video_id INTEGER NOT NULL,

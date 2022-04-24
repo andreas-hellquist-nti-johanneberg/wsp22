@@ -1,0 +1,13 @@
+div.centered-container
+  h2 Videor
+
+  form action="/videos" method="GET"
+    label for="order-select" Sortera efter
+    select#order-select name="video_order"
+      option value="new" Ny
+      option value="old" Gammal
+      option value="stars" Stjärnor
+    input type="submit" value="Sortera"
+
+  - videos.each do |video|
+    a href="/videos/#{video["id"]}" #{video["title"]} (#{video["stars"]} stjärnor)

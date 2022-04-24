@@ -1,0 +1,56 @@
+/ This will be pretty one day
+div#video-page-container.centered-container
+  video#video-player src="#{video_data[0]["video_src"]}" controls="true" controlslist="nodownload"
+  label for="video-player" = video_data[0]["title"]
+  - for video in video_data
+    span = "#{video["genre"]} "
+
+  span#video-description-box = video_data[0]["description"]
+
+  hr.horizontal-seperator.wide
+
+  - if user_is_logged_in
+    / Visst det är fult med lokala variabler i viewn, men det vore fulare att
+    / skriva detta 5 gånger
+    - ureview = (video_reviews.find {|h| h["uid"] == session[:user_id]})
+    / Användaren har inte redan recenserat videon
+    - if ureview == nil
+      h3 Skriv en recension
+      form#review-form method="POST" action="/video-reviews"
+        div.input-block
+          select#star-select name="num-stars"
+            - 5.times do |num|
+              option value="#{num+1}" #{num+1} Stjärnor
+        div.input-block
+          textarea name="review-text" required="required"
+        input type="hidden" name="video-id" value="#{video_data[0]["id"]}"
+        div.input-block
+          input type="submit" value="Skicka"
+    - else
+      h3 Uppdatera din recension
+      form#review-form method="POST" action="/video-reviews/#{ureview['rid']}/update"
+        div.input-block
+          select#star-select name="num-stars"
+            - 5.times do |num|
+              - if ureview['stars'] == num + 1
+                option value="#{num+1}" selected="selected" #{num+1} Stjärnor
+              - else
+                option value="#{num+1}" #{num+1} Stjärnor
+        div.input-block
+          textarea name="review-text" required="required" = ureview["text"]
+        div.input-block
+          input type="submit" value="Skicka"
+  - else
+    p Logga in för att skriva en recension
+
+  hr.horizontal-seperator.wide
+
+  section#ratings-container
+    - video_reviews.each do |review|
+      div#review-container
+        div#img-and-username
+          span = review["username"]
+          img src="#{review["profile_picture"]}" alt="Profilbild för användaren #{review["username"]}"
+        div#stars-and-text
+          span #{review["stars"]} stjärnor
+          span = review["text"]

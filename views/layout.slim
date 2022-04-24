@@ -19,13 +19,13 @@ html lang="en"
         form#logout-form action="/users/logout" method="POST"
           input.button-as-link type="submit" value="Logga ut"
       - else
-        // Lägg in faktiska länkar här
         a href="/users/new" Registrera dig
         a href="/users/login" Logga in
       hr.horizontal-seperator
       - if user_is_admin
         a href="/admin" Adminpanel
         hr.horizontal-seperator
+      a href="/videos" Se videor
       a Om oss
       a Policy
     div#hamburger-menu-hover-detect.hoverdetector

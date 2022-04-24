@@ -1,15 +1,3 @@
-// Profile should show:
-// - username
-// - wether user is administrator
-// - profile picture
-// - all ratings of videos
-// - all comments on videos
-// - all comments on blog posts
-
-// That will be easier to implement when I have actual data though, so for now
-// I will only show the first three
-
-
 div#profile-container.centered-container
   h2 Profil
 
@@ -21,15 +9,22 @@ div#profile-container.centered-container
   section#profile-img-name-card
     img src="#{user_data["profile_picture"]}" alt="Profilbild"
     span = user_data["username"]
-    - if user_data["id"] == session[:user_id]
-      a href="/users/#{user_data["id"]}/edit" Redigera din profil
+    div#edits
+      - if user_data["id"] == session[:user_id]
+        a href="/users/#{user_data["id"]}/edit" Redigera din profil
+      - if user_is_admin
+        form#user-delete-form action="/users/#{user_data["id"]}/delete" method="POST"
+          input.button-as-link type="submit" value="Ta bort användare (kan inte ångras)"
 
-  section.horizontal-container
-    section
-      h3 Kommentarer
-      - 5.times do |num|
-        p Kommentar
-    section
-      h3 Stjärnmarkeringar
-      - 5.times do |num|
-        p Stjärnor
+  - unless reviews.empty?()
+    h3 Recensioner
+    section#ratings-container
+      - reviews.each do |review|
+        a href="/videos/#{review['video_id']}" #{review['video_title']}:
+        div#review-container.bottom-border
+          div#img-and-username
+            span = review["username"]
+            img src="#{review["profile_picture"]}" alt="Profilbild för användaren #{review["username"]}"
+          div#stars-and-text
+            span #{review["stars"]} stjärnor
+            span = review["text"]
