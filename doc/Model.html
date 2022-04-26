@@ -1,0 +1,3021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Model
+  
+    &mdash; Documentation by YARD 0.9.27
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Model";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/custom.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (M)</a> &raquo;
+    
+    
+    <span class="title">Model</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Model
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>model.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The model part of MVC</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_video_review-instance_method" title="#add_video_review (instance method)">#<strong>add_video_review</strong>(user_id, video_id, stars, review_text)  &#x21d2; void, String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a review to a video.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_user_and_data-instance_method" title="#delete_user_and_data (instance method)">#<strong>delete_user_and_data</strong>(user_id)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete a user and all its reviews.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_admin_locals-instance_method" title="#get_admin_locals (instance method)">#<strong>get_admin_locals</strong>  &#x21d2; Hash, void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all the neccesary data to display the admin page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_avarage_star_rating-instance_method" title="#get_avarage_star_rating (instance method)">#<strong>get_avarage_star_rating</strong>(video_id)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the avarage number of stars given in the reviews for a given video.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_db-instance_method" title="#get_db (instance method)">#<strong>get_db</strong>  &#x21d2; SQLite3::Database </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an sqlite3 database object connected to the applications database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_last_login_attempt-instance_method" title="#get_last_login_attempt (instance method)">#<strong>get_last_login_attempt</strong>(username)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a UNIX timestamp of a users last attempted login.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_new_video_locals-instance_method" title="#get_new_video_locals (instance method)">#<strong>get_new_video_locals</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the neccesary data to display the video upload page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_profile_edit_locals-instance_method" title="#get_profile_edit_locals (instance method)">#<strong>get_profile_edit_locals</strong>(user_id)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash with the neccesary data to display a user&#39;s profile edit page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_profile_page_locals-instance_method" title="#get_profile_page_locals (instance method)">#<strong>get_profile_page_locals</strong>(user_id)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash with the neccesary data to display a user&#39;s profile page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_review_user_id-instance_method" title="#get_review_user_id (instance method)">#<strong>get_review_user_id</strong>(review_id)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the ID of the user who wrote a certain review.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_review_video_id-instance_method" title="#get_review_video_id (instance method)">#<strong>get_review_video_id</strong>(review_id)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the ID of the video that was reviewed in a video review.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_video_locals-instance_method" title="#get_video_locals (instance method)">#<strong>get_video_locals</strong>(order)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all the neccesary data to display the videos page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_video_show_locals-instance_method" title="#get_video_show_locals (instance method)">#<strong>get_video_show_locals</strong>(video_id)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the data to display the page of a video.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#login_user-instance_method" title="#login_user (instance method)">#<strong>login_user</strong>(username, password)  &#x21d2; Integer, String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks a users username and password against the database and returns the user&#39;s ID on success.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_login_attempt-instance_method" title="#register_login_attempt (instance method)">#<strong>register_login_attempt</strong>(username)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Updates a users time of last attempted login with the current time.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_user-instance_method" title="#register_user (instance method)">#<strong>register_user</strong>(username, password, password_confirm)  &#x21d2; Integer, String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Registers a new user in the database and returns its ID, or an error message if the user could not be added.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#review_exists%3F-instance_method" title="#review_exists? (instance method)">#<strong>review_exists?</strong>(review_id)  &#x21d2; TrueClass, FalseClass </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Check if a review with a certain ID exists.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_user-instance_method" title="#update_user (instance method)">#<strong>update_user</strong>(params)  &#x21d2; void, String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Updates a user&#39;s profile.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_video_review-instance_method" title="#update_video_review (instance method)">#<strong>update_video_review</strong>(review_id, stars, review_text)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update a video review with new content.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#upload_video-instance_method" title="#upload_video (instance method)">#<strong>upload_video</strong>(video_title, video_desc, video_src)  &#x21d2; Integer, String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Upload a video to the database and return its ID on success.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_video_review-instance_method">
+  
+    #<strong>add_video_review</strong>(user_id, video_id, stars, review_text)  &#x21d2; <tt>void</tt>, <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a review to a video</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The id of the user who wrote the review</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>video_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The id of the video that was reviewed</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>stars</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of stars in the review</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>review_text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text of the review</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>void</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Nil on success, or an error message on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 471</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_video_review'>add_video_review</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_video_id'>video_id</span><span class='comma'>,</span> <span class='id identifier rubyid_stars'>stars</span><span class='comma'>,</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_test'>test</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT * FROM videos WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_video_id'>video_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_test'>test</span> <span class='op'>==</span> <span class='kw'>nil</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ogiltigt video-id. Säg till en administratör (mig) om du inte orsakade detta med flit.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_stars'>stars</span> <span class='op'>&lt;</span> <span class='int'>1</span> <span class='op'>||</span> <span class='id identifier rubyid_stars'>stars</span> <span class='op'>&gt;</span> <span class='int'>5</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>För många eller för få stjärnor. Sluta inspektera element.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Du måste skriva någonting i din recension.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO video_reviews (user_id, video_id, stars, text)
+                VALUES (?, ?, ?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_video_id'>video_id</span><span class='comma'>,</span> <span class='id identifier rubyid_stars'>stars</span><span class='comma'>,</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_user_and_data-instance_method">
+  
+    #<strong>delete_user_and_data</strong>(user_id)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Delete a user and all its reviews</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the user</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+304
+305
+306
+307
+308</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 304</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_user_and_data'>delete_user_and_data</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM users WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE FROM video_reviews WHERE user_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_admin_locals-instance_method">
+  
+    #<strong>get_admin_locals</strong>  &#x21d2; <tt>Hash</tt>, <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all the neccesary data to display the admin page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:usernames [Array] Array of hashes containing user information</p>
+<ul><li>
+<p>“id” [Integer] The id of a user</p>
+</li><li>
+<p>“username” [String] The username of a user</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>void</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+318
+319
+320
+321
+322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 318</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_admin_locals'>get_admin_locals</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id, username FROM users</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>usernames:</span><span class='id identifier rubyid_result'>result</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_avarage_star_rating-instance_method">
+  
+    #<strong>get_avarage_star_rating</strong>(video_id)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the avarage number of stars given in the reviews for a given video</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>video_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The id of the video</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the avarage number of stars</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_avarage_star_rating'>get_avarage_star_rating</span><span class='lparen'>(</span><span class='id identifier rubyid_video_id'>video_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT stars FROM video_reviews WHERE video_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_video_id'>video_id</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='int'>0</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_total_stars'>total_stars</span> <span class='op'>=</span> <span class='int'>0</span>
+        <span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='id identifier rubyid_res'>res</span> <span class='kw'>do</span>
+            <span class='id identifier rubyid_total_stars'>total_stars</span> <span class='op'>+=</span> <span class='id identifier rubyid_i'>i</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stars</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_avg_stars'>avg_stars</span> <span class='op'>=</span> <span class='id identifier rubyid_total_stars'>total_stars</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>/</span> <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+
+        <span class='kw'>return</span> <span class='id identifier rubyid_avg_stars'>avg_stars</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_db-instance_method">
+  
+    #<strong>get_db</strong>  &#x21d2; <tt>SQLite3::Database</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an sqlite3 database object connected to the applications database</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>SQLite3::Database</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>connected to the application&#39;s database</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_db'>get_db</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>db/db.db</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_results_as_hash'>results_as_hash</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_db'>db</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_last_login_attempt-instance_method">
+  
+    #<strong>get_last_login_attempt</strong>(username)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a UNIX timestamp of a users last attempted login</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The username of the user</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The UNIX timestamp of the users last attempted login</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_last_login_attempt'>get_last_login_attempt</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT last_login_attempt FROM users WHERE username = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>last_login_attempt</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_new_video_locals-instance_method">
+  
+    #<strong>get_new_video_locals</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the neccesary data to display the video upload page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>genres [Array] Array of hashes containg information about a genre</p>
+<ul><li>
+<p>“id” [Integer] The id of a genre</p>
+</li><li>
+<p>“genre” [String] String describing the genre</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+366
+367
+368
+369
+370</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 366</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_new_video_locals'>get_new_video_locals</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT * FROM genres</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>genres:</span><span class='id identifier rubyid_res'>res</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_profile_edit_locals-instance_method">
+  
+    #<strong>get_profile_edit_locals</strong>(user_id)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash with the neccesary data to display a user&#39;s profile edit page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the user whos profile edit page should be shown</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:user_data [Hash]</p>
+<ul><li>
+<p>“id” [Integer] The ID of the user</p>
+</li><li>
+<p>“username” [String] The username of the user</p>
+</li><li>
+<p>“profile_picture” [String] Path to the user&#39;s profile picture</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_profile_edit_locals'>get_profile_edit_locals</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id, username, profile_picture
+                         FROM users
+                         WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>user_data:</span> <span class='id identifier rubyid_result'>result</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_profile_page_locals-instance_method">
+  
+    #<strong>get_profile_page_locals</strong>(user_id)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash with the neccesary data to display a user&#39;s profile page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the user whos profile page should be shown</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:user_data [Hash]</p>
+<ul><li>
+<p>“id” [Integer] The ID of the user</p>
+</li><li>
+<p>“username” [String] The username of the user</p>
+</li><li>
+<p>“is_admin” [Integer] 1 if the user is an administrator, 0 otherwise</p>
+</li><li>
+<p>“profile_picture” [String] Path to the user&#39;s profile picture</p>
+</li></ul>
+</li><li>
+<p>:reviews [Array] Array of hashes with data about all the reviews a user has published</p>
+<ul><li>
+<p>“username” [String] The username of the user</p>
+</li><li>
+<p>“profile_picture” [String] Path to the user&#39;s profile picture</p>
+</li><li>
+<p>“stars” [Integer} ]The number of stars in the review</p>
+</li><li>
+<p>“text” [String] The review content</p>
+</li><li>
+<p>“video_id” [Integer] The ID of the video that the review belongs to</p>
+</li><li>
+<p>“video_title” [String] The title of the video that the review belongs to</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_profile_page_locals'>get_profile_page_locals</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id, username, is_admin, profile_picture
+                         FROM users
+                         WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+
+    <span class='id identifier rubyid_reviews'>reviews</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT users.username, users.profile_picture,
+                                video_reviews.stars, video_reviews.text, video_reviews.video_id,
+                                videos.title AS video_title
+                         FROM ((users
+                             INNER JOIN video_reviews ON users.id = video_reviews.user_id)
+                             INNER JOIN videos ON videos.id = video_reviews.video_id)
+                         WHERE users.id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Reviews: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_reviews'>reviews</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>user_data:</span><span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='label'>reviews:</span><span class='id identifier rubyid_reviews'>reviews</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_review_user_id-instance_method">
+  
+    #<strong>get_review_user_id</strong>(review_id)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the ID of the user who wrote a certain review</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>review_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the review to fetch the user ID from</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the user who wrote the review</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+509
+510
+511
+512</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 509</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_review_user_id'>get_review_user_id</span><span class='lparen'>(</span><span class='id identifier rubyid_review_id'>review_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT user_id FROM video_reviews WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_review_video_id-instance_method">
+  
+    #<strong>get_review_video_id</strong>(review_id)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the ID of the video that was reviewed in a video review</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>review_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the review to fetch the video ID from</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the video that was reviewed</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+519
+520
+521
+522</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 519</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_review_video_id'>get_review_video_id</span><span class='lparen'>(</span><span class='id identifier rubyid_review_id'>review_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT video_id FROM video_reviews WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>video_id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_video_locals-instance_method">
+  
+    #<strong>get_video_locals</strong>(order)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all the neccesary data to display the videos page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The order to display the videos. One of “new”, “old”, “stars”</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:videos [Array] Array of hashes containing information about the videos</p>
+<ul><li>
+<p>“id” [Integer] The ID of a video</p>
+</li><li>
+<p>“title” [String] The title of a video</p>
+</li><li>
+<p>“upload_date” [Integer] A UNIX timestamp of when a video was uploaded</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 333</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_video_locals'>get_video_locals</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='comment'># Possible are &quot;new&quot;, &quot;old&quot;, &quot;stars&quot;
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># Add the avarage star rating to each video
+</span>    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id, title, upload_date FROM videos</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
+        <span class='id identifier rubyid_hash'>hash</span><span class='period'>.</span><span class='id identifier rubyid_store'>store</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stars</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_get_avarage_star_rating'><span class='object_link'><a href="#get_avarage_star_rating-instance_method" title="Model#get_avarage_star_rating (method)">get_avarage_star_rating</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>case</span> <span class='id identifier rubyid_order'>order</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_sort!'>sort!</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>upload_date</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>old</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_sort!'>sort!</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>upload_date</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+        <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_reverse!'>reverse!</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stars</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_sort!'>sort!</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stars</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>videos:</span><span class='id identifier rubyid_res'>res</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_video_show_locals-instance_method">
+  
+    #<strong>get_video_show_locals</strong>(video_id)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the data to display the page of a video</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>video_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the video</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:video_data [Array] Array of hashes containing information about the video</p>
+<ul><li>
+<p>“id” [Integer] The ID of the video</p>
+</li><li>
+<p>“title” [String] The title of the video</p>
+</li><li>
+<p>“description” [String] The description of the video</p>
+</li><li>
+<p>“upload_date” [Integer] The video&#39;s upload date as a UNIX timestamp</p>
+</li><li>
+<p>“video_src” [String] Path to the video</p>
+</li><li>
+<p>“genre” [String] One of the video&#39;s genres</p>
+</li></ul>
+</li><li>
+<p>:video_reviews [Array] Array of hashes containing information about the reviews of the video</p>
+<ul><li>
+<p>“uid” [Integer] The ID of the user who wrote the review</p>
+</li><li>
+<p>“username” [String] The username of the user who wrote the review</p>
+</li><li>
+<p>“profile_picture” [String] Path to the profile picture of the user who wrote the review</p>
+</li><li>
+<p>“rid” [Integer] The ID of the review</p>
+</li><li>
+<p>“stars” [Integer] The number of stars in the review</p>
+</li><li>
+<p>“text” [String] The text of the review</p>
+</li></ul>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 444</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_video_show_locals'>get_video_show_locals</span><span class='lparen'>(</span><span class='id identifier rubyid_video_id'>video_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='comment'># Each index in the array has a different genre
+</span>    <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT videos.id, videos.title, videos.description, videos.upload_date, videos.video_src, genres.genre
+        FROM ((video_genre_relation
+            INNER JOIN videos ON videos.id = video_genre_relation.video_id)
+            INNER JOIN genres ON genres.id = video_genre_relation.genre_id)
+        WHERE video_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_reviews'>reviews</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT users.id AS uid, users.username, users.profile_picture,
+                                 video_reviews.id AS rid, video_reviews.stars, video_reviews.text
+                          FROM (video_reviews
+                              INNER JOIN users ON users.id = video_reviews.user_id)
+                          WHERE video_reviews.video_id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+    <span class='kw'>return</span> <span class='lbrace'>{</span><span class='label'>video_data:</span><span class='id identifier rubyid_res'>res</span><span class='comma'>,</span> <span class='label'>video_reviews:</span><span class='id identifier rubyid_reviews'>reviews</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="login_user-instance_method">
+  
+    #<strong>login_user</strong>(username, password)  &#x21d2; <tt>Integer</tt>, <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks a users username and password against the database and returns the user&#39;s ID on success. Returns an error message on failure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The provided username of the user</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The provided password of the user</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the user on success. An error message on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_login_user'>login_user</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT * FROM users WHERE username = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span>
+        <span class='id identifier rubyid_pw_hash'>pw_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password_hash</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Användarnamnet existerar inte</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_last_login_attempt'>last_login_attempt</span> <span class='op'>=</span> <span class='id identifier rubyid_get_last_login_attempt'><span class='object_link'><a href="#get_last_login_attempt-instance_method" title="Model#get_last_login_attempt (method)">get_last_login_attempt</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_last_login_attempt'>last_login_attempt</span> <span class='op'>&lt;</span> <span class='int'>30</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Försök igen om </span><span class='embexpr_beg'>#{</span><span class='int'>30</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_last_login_attempt'>last_login_attempt</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> sekunder</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_register_login_attempt'><span class='object_link'><a href="#register_login_attempt-instance_method" title="Model#register_login_attempt (method)">register_login_attempt</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_pw_hash'>pw_hash</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='id identifier rubyid_password'>password</span>
+        <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Fel lösenord</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_login_attempt-instance_method">
+  
+    #<strong>register_login_attempt</strong>(username)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Updates a users time of last attempted login with the current time</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The username of the user</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_login_attempt'>register_login_attempt</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE users
+                SET last_login_attempt = (CAST((strftime(&#39;%s&#39;)) AS INT))
+                WHERE username = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_username'>username</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_user-instance_method">
+  
+    #<strong>register_user</strong>(username, password, password_confirm)  &#x21d2; <tt>Integer</tt>, <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Registers a new user in the database and returns its ID, or an error message if the user could not be added</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new user&#39;s username</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new user&#39;s password</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password_confirm</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new user&#39;s password confirmation. Should be the same as `password`</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new user&#39;s ID on sucess, an error message otherwise</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_user'>register_user</span><span class='lparen'>(</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='comma'>,</span> <span class='id identifier rubyid_password_confirm'>password_confirm</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_password'>password</span> <span class='op'>==</span> <span class='id identifier rubyid_password_confirm'>password_confirm</span>
+        <span class='id identifier rubyid_password_hash'>password_hash</span> <span class='op'>=</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='kw'>begin</span>
+            <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO users (username, password_hash, is_admin, profile_picture) VALUES (?, ?, FALSE, &#39;/user_public_data/profile-picture-default.png&#39;)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_username'>username</span><span class='comma'>,</span> <span class='id identifier rubyid_password_hash'>password_hash</span><span class='rparen'>)</span>
+        <span class='kw'>rescue</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>ConstraintException</span>
+            <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Användarnamnet är upptaget</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+
+        <span class='kw'>return</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT last_insert_rowid()</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>last_insert_rowid()</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='kw'>else</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Lösenorden matchade inte</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="review_exists?-instance_method">
+  
+    #<strong>review_exists?</strong>(review_id)  &#x21d2; <tt>TrueClass</tt>, <tt>FalseClass</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Check if a review with a certain ID exists</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>review_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the review to check if it exists</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>TrueClass</tt>, <tt>FalseClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if the review exists, false otherwise</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+494
+495
+496
+497
+498
+499
+500
+501
+502</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 494</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_review_exists?'>review_exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_review_id'>review_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_test'>test</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT * FROM video_reviews WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_test'>test</span> <span class='op'>==</span> <span class='kw'>nil</span>
+        <span class='kw'>return</span> <span class='kw'>false</span> 
+    <span class='kw'>end</span>
+    <span class='kw'>return</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_user-instance_method">
+  
+    #<strong>update_user</strong>(params)  &#x21d2; <tt>void</tt>, <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates a user&#39;s profile. Returns an error message on failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Form data</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">new_username,</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The new username of the user</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">curr_password,</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The current password of the user</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">new_password,</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The new password of the user</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">confirm_new_password,</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The confirmed new password of the user. Should be the same as `new_password`</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">confirm_new_password,</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The confirmed new password of the user. Should be the same as `new_password`</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">new_profile_picture,</span>
+          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A hash containing data about the uploaded new profile picture of the user</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>void</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An error message on failure, or nothing on success</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_user'>update_user</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_update_username'>update_username</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_update_password'>update_password</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_update_pfp'>update_pfp</span> <span class='op'>=</span> <span class='kw'>false</span>
+
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+
+    <span class='comment'># TODO: Check for duplicates / handle sql exceptions
+</span>    <span class='id identifier rubyid_new_username'>new_username</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new_username</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_new_username'>new_username</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM users WHERE username = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_new_username'>new_username</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_res'>res</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+            <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Användarnamnet är upptaget</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+
+        <span class='id identifier rubyid_update_username'>update_username</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_curr_password'>curr_password</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>curr_password</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_new_password'>new_password</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new_password</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_new_password_confirm'>new_password_confirm</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>confirm_new_password</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='comment'># Admin can just change a users password without needing to know the current
+</span>    <span class='comment'># password
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_user_is_admin'>user_is_admin</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_new_password'>new_password</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_new_password_confirm'>new_password_confirm</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+            <span class='kw'>unless</span> <span class='id identifier rubyid_new_password'>new_password</span> <span class='op'>==</span> <span class='id identifier rubyid_new_password_confirm'>new_password_confirm</span>
+                <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Nya lösenord matchade inte</span><span class='tstring_end'>&quot;</span></span>
+            <span class='kw'>end</span>
+
+            <span class='id identifier rubyid_update_password'>update_password</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+    <span class='kw'>else</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_curr_password'>curr_password</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_new_password'>new_password</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_new_password_confirm'>new_password_confirm</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+            <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT password_hash FROM users WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+
+            <span class='id identifier rubyid_pw_hash'>pw_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password_hash</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+            <span class='kw'>unless</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_pw_hash'>pw_hash</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='id identifier rubyid_curr_password'>curr_password</span>
+                <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Felaktigt nuvarande lösenord</span><span class='tstring_end'>&quot;</span></span>
+            <span class='kw'>end</span>
+
+            <span class='kw'>unless</span> <span class='id identifier rubyid_new_password'>new_password</span> <span class='op'>==</span> <span class='id identifier rubyid_new_password_confirm'>new_password_confirm</span>
+                <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Nya lösenord matchade inte</span><span class='tstring_end'>&quot;</span></span>
+            <span class='kw'>end</span>
+
+            <span class='id identifier rubyid_update_password'>update_password</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_pfp_data'>pfp_data</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new_profile_picture</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_pfp_data'>pfp_data</span>
+        <span class='id identifier rubyid_filetype'>filetype</span> <span class='op'>=</span> <span class='id identifier rubyid_pfp_data'>pfp_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+        <span class='kw'>unless</span> <span class='id identifier rubyid_filetype'>filetype</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>image/png</span><span class='tstring_end'>&quot;</span></span> <span class='op'>||</span> <span class='id identifier rubyid_filetype'>filetype</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>&quot;</span></span>
+            <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Only png and jpeg images are supported</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+
+        <span class='id identifier rubyid_update_pfp'>update_pfp</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># We do all the updating in the end to avoid partly updating things in the case
+</span>    <span class='comment'># of errors
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_update_username'>update_username</span>
+        <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE users
+                    SET username = ?
+                    WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_new_username'>new_username</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_update_password'>update_password</span>
+        <span class='id identifier rubyid_new_pw_hash'>new_pw_hash</span> <span class='op'>=</span> <span class='const'>BCrypt</span><span class='op'>::</span><span class='const'>Password</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_new_password'>new_password</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE users
+                    SET password_hash = ?
+                    WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_new_pw_hash'>new_pw_hash</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_update_pfp'>update_pfp</span>
+        <span class='id identifier rubyid_pfp_ext'>pfp_ext</span> <span class='op'>=</span> <span class='id identifier rubyid_filetype'>filetype</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span> <span class='op'>=</span> <span class='id identifier rubyid_pfp_data'>pfp_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tempfile</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+        <span class='id identifier rubyid_pfp_hash'>pfp_hash</span> <span class='op'>=</span> <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA256</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='lparen'>(</span><span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span>
+ 
+        <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/user_public_data/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pfp_hash'>pfp_hash</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pfp_ext'>pfp_ext</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_path_for_db'>path_for_db</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/user_public_data/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pfp_hash'>pfp_hash</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pfp_ext'>pfp_ext</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        
+        <span class='comment'>#Lägg till path i databas
+</span>        <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE users
+                    SET profile_picture = ?
+                    WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_path_for_db'>path_for_db</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+        
+        <span class='comment'>#Spara bilden (skriv innehållet i tempfile till destinationen path)
+</span>        <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_video_review-instance_method">
+  
+    #<strong>update_video_review</strong>(review_id, stars, review_text)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Update a video review with new content</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>review_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the review that is to be updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>stars</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new number of stars to update to</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>review_text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new text of the review</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 531</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_video_review'>update_video_review</span><span class='lparen'>(</span><span class='id identifier rubyid_review_id'>review_id</span><span class='comma'>,</span> <span class='id identifier rubyid_stars'>stars</span><span class='comma'>,</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_stars'>stars</span> <span class='op'>&lt;</span> <span class='int'>1</span> <span class='op'>||</span> <span class='id identifier rubyid_stars'>stars</span> <span class='op'>&gt;</span> <span class='int'>5</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>För många eller för få stjärnor. Sluta inspektera element.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Du måste skriva någonting i din recension.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UPDATE video_reviews
+                SET stars = ?, text = ?
+                WHERE id = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_stars'>stars</span><span class='comma'>,</span> <span class='id identifier rubyid_review_text'>review_text</span><span class='comma'>,</span> <span class='id identifier rubyid_review_id'>review_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="upload_video-instance_method">
+  
+    #<strong>upload_video</strong>(video_title, video_desc, video_src)  &#x21d2; <tt>Integer</tt>, <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Upload a video to the database and return its ID on success. Returns an error message on failure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>video_title</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The title of the new video</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>video_desc</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The description of the the video</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>video_src</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Path to the video file</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the new video on sucess, or an error message on failure.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model.rb', line 379</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_upload_video'>upload_video</span><span class='lparen'>(</span><span class='id identifier rubyid_video_title'>video_title</span><span class='comma'>,</span> <span class='id identifier rubyid_video_desc'>video_desc</span><span class='comma'>,</span> <span class='id identifier rubyid_video_src'>video_src</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='id identifier rubyid_get_db'><span class='object_link'><a href="#get_db-instance_method" title="Model#get_db (method)">get_db</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_video_desc'>video_desc</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_video_desc'>video_desc</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Videon saknar beskrivning</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>unless</span> <span class='id identifier rubyid_video_title'>video_title</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_video_src'>video_src</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_filetype'>filetype</span> <span class='op'>=</span> <span class='id identifier rubyid_video_src'>video_src</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+        <span class='kw'>unless</span> <span class='id identifier rubyid_filetype'>filetype</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>video/mp4</span><span class='tstring_end'>&quot;</span></span>
+            <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Endast mp4 formatet stöds för videor</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+
+        <span class='id identifier rubyid_video_ext'>video_ext</span> <span class='op'>=</span> <span class='id identifier rubyid_filetype'>filetype</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span> <span class='op'>=</span> <span class='id identifier rubyid_video_src'>video_src</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tempfile</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+        <span class='id identifier rubyid_video_hash'>video_hash</span> <span class='op'>=</span> <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA256</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='lparen'>(</span><span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span>
+ 
+        <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/videos/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_video_hash'>video_hash</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_video_ext'>video_ext</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_path_for_db'>path_for_db</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/videos/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_video_hash'>video_hash</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_video_ext'>video_ext</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        
+        <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO videos
+                     (title, description, video_src, upload_date)
+                     VALUES (?, ?, ?, (CAST((strftime(&#39;%s&#39;)) AS INT)))</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_video_title'>video_title</span><span class='comma'>,</span> <span class='id identifier rubyid_video_desc'>video_desc</span><span class='comma'>,</span>
+                                                        <span class='id identifier rubyid_path_for_db'>path_for_db</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_video_id'>video_id</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT last_insert_rowid()</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>last_insert_rowid()</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+        
+        <span class='comment'>#Spara bilden (skriv innehållet i tempfile till destinationen path)
+</span>        <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_tmpfile_path'>tmpfile_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+        <span class='comment'># Add genres to the relation table
+</span>        <span class='id identifier rubyid_genre_ids'>genre_ids</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SELECT id FROM genres</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_genre'>genre</span><span class='op'>|</span> <span class='id identifier rubyid_genre'>genre</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+        <span class='kw'>for</span> <span class='id identifier rubyid_genre_id'>genre_id</span> <span class='kw'>in</span> <span class='id identifier rubyid_genre_ids'>genre_ids</span> <span class='kw'>do</span>
+            <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>genre_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_genre_id'>genre_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>on</span><span class='tstring_end'>&#39;</span></span>
+                <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INSERT INTO video_genre_relation (video_id, genre_id)
+                            VALUES (?, ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_video_id'>video_id</span><span class='comma'>,</span> <span class='id identifier rubyid_genre_id'>genre_id</span><span class='rparen'>)</span>
+            <span class='kw'>end</span>
+        <span class='kw'>end</span>
+
+        <span class='kw'>return</span> <span class='id identifier rubyid_video_id'>video_id</span>
+    <span class='kw'>else</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You must supply a title and a video</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 26 23:17:58 2022 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.27 (ruby-2.7.0).
+</div>
+
+    </div>
+  </body>
+</html>

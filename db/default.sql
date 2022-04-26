@@ -5,7 +5,8 @@ CREATE TABLE users (
     username TEXT NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
     is_admin INTEGER NOT NULL,
-    profile_picture TEXT NOT NULL
+    profile_picture TEXT NOT NULL,
+    last_login_attempt INTEGER NOT NULL
 );
 
 CREATE TABLE videos (
