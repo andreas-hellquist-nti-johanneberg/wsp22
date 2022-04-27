@@ -344,14 +344,17 @@ module Model
             hash.store("stars", get_avarage_star_rating(hash["id"]))
         end
 
+        print "res: #{res}\n"
+
         case order
         when "new"
-            res.sort! {|hash| hash["upload_date"]}
+            res.sort_by! {|hash| hash["upload_date"]}
         when "old"
-            res.sort! {|hash| hash["upload_date"]}
+            res.sort_by! {|hash| hash["upload_date"]}
             res.reverse!()
         when "stars"
-            res.sort! {|hash| hash["stars"]}
+            res.sort_by! {|hash| hash["stars"]}
+            res.reverse!()
         end
 
         return {videos:res}
