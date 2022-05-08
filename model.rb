@@ -72,7 +72,7 @@ module Model
             password_hash = BCrypt::Password.create(password)
             db = get_db()
             begin
-                db.execute("INSERT INTO users (username, password_hash, is_admin, profile_picture) VALUES (?, ?, FALSE, '/user_public_data/profile-picture-default.png')", username, password_hash)
+                db.execute("INSERT INTO users (username, password_hash, is_admin, profile_picture, last_login_attempt) VALUES (?, ?, FALSE, '/user_public_data/profile-picture-default.png', (CAST((strftime('%s')) AS INT)))", username, password_hash)
             rescue SQLite3::ConstraintException
                 return "Användarnamnet är upptaget"
             end
